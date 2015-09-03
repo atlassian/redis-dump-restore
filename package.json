@@ -6,7 +6,7 @@
   "scripts": {
     "spec": "mocha ./test/*.test.js",
     "it": "mocha ./test/*.it.js",
-    "lint": "exit 0",
+    "lint": "eslint .",
     "test": "npm run lint && npm run spec",
     "coverage": "istanbul cover _mocha",
     "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls"
@@ -33,6 +33,7 @@
   "devDependencies": {
     "chai": "2.x.x",
     "coveralls": "^2.x.x",
+    "eslint": "^1.x.x",
     "istanbul": "^0.x.x",
     "mocha": "2.x.x",
     "node-uuid": "^1.x.x",
