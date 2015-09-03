@@ -1,0 +1,9 @@
+/.idea/
+/test/
+/coverage/
+/.editorconfig
+/.gitignore
+/.npmignore
+/.nvmrc
+/.travis.yml
+/.DS_Store

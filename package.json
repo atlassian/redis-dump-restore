@@ -1,0 +1,43 @@
+{
+  "name": "redis-dump-restore",
+  "version": "0.0.1",
+  "description": "Dump and restore Redis contents",
+  "main": "index.js",
+  "scripts": {
+    "spec": "mocha ./test/*.test.js",
+    "it": "mocha ./test/*.it.js",
+    "lint": "exit 0",
+    "test": "npm run lint && npm run spec",
+    "coverage": "istanbul cover _mocha",
+    "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com:atlassian/redis-dump-restore.git"
+  },
+  "bugs": {
+    "url": "https://github.com/atlassian/redis-dump-restore/issues"
+  },
+  "publishConfig": {
+    "registry": "http://registry.npmjs.org/"
+  },
+  "keywords": [
+    "redis",
+    "dump",
+    "restore",
+    "export",
+    "backup"
+  ],
+  "author": "Mikhail Mazurskiy <mikhail.mazursky@gmail.com> (ash2k.com)",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "chai": "2.x.x",
+    "coveralls": "^2.x.x",
+    "istanbul": "^0.x.x",
+    "mocha": "2.x.x",
+    "node-uuid": "^1.x.x",
+    "redis": "^1.x.x",
+    "sinon": "1.x.x",
+    "sinon-chai": "2.x.x"
+  }
+}

@@ -1,0 +1,5 @@
+--slow 20
+--reporter spec
+--require test/support/setup
+--check-leaks
+
