@@ -1,5 +1,5 @@
 {
-  "name": "redis-dump-restore",
+  "name": "@atlassian/redis-dump-restore",
   "version": "0.0.1",
   "description": "Dump and restore Redis contents",
   "main": "index.js",
@@ -17,9 +17,6 @@
   },
   "bugs": {
     "url": "https://github.com/atlassian/redis-dump-restore/issues"
-  },
-  "publishConfig": {
-    "registry": "http://registry.npmjs.org/"
   },
   "keywords": [
     "redis",
