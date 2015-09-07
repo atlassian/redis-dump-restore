@@ -19,9 +19,9 @@ describe('dump', function () {
   });
 
   it('should emit dumped value for each key', function (done) {
-    client.keys.withArgs('*').yields(null, [key1]);
+    client.keys.withArgs(new Buffer('*')).yields(null, [key1]);
     client.dump.withArgs(key1).yields(null, value1);
-    client.pttl.withArgs(key1).yields(null, 10);
+    client.pttl.withArgs(key1).yields(null, new Buffer('10'));
 
     let dataCalled = false;
 
@@ -40,9 +40,9 @@ describe('dump', function () {
   });
 
   it('should skip value when pttl returns -2', function (done) {
-    client.keys.withArgs('*').yields(null, [key1]);
+    client.keys.withArgs(new Buffer('*')).yields(null, [key1]);
     client.dump.withArgs(key1).yields(null, value1);
-    client.pttl.withArgs(key1).yields(null, -2);
+    client.pttl.withArgs(key1).yields(null, new Buffer('-2'));
 
     dump(client)
       .on('data', function (key, data, ttl) {

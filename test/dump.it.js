@@ -10,8 +10,8 @@ describe('dump', function () {
   let key1;
 
   beforeEach(function () {
-    client = redis.createClient();
-    key1 = uuid.v4() + '-random-test-key';
+    client = redis.createClient({ detect_buffers: true });
+    key1 = new Buffer(uuid.v4() + '-random-test-key');
   });
 
   afterEach(function (done) {
@@ -21,7 +21,7 @@ describe('dump', function () {
     });
   });
 
-  it('should emit dumped value for each key', function (done) {
+  it('should emit dumped value', function (done) {
     client.set(key1, uuid.v4(), 'EX', 5, function (err) {
       if (err) {
         done(err);
@@ -30,10 +30,11 @@ describe('dump', function () {
       let dataCalled = false;
       dump(client)
         .on('data', function (key, data, ttl) {
-          key.should.equal(key1);
-          data.should.be.not.null;
-          ttl.should.be.not.null;
-          dataCalled = true;
+          if (key.equals(key1)) {
+            data.should.be.not.null;
+            ttl.should.be.not.null;
+            dataCalled = true;
+          }
         })
         .on('error', done)
         .on('end', function () {
