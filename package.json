@@ -1,6 +1,6 @@
 {
   "name": "@atlassian/redis-dump-restore",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Dump and restore Redis contents",
   "main": "index.js",
   "scripts": {
