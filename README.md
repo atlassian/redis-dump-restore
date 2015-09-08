@@ -19,6 +19,8 @@ No production-time dependencies. For the list of test-time dependencies and thei
 ```JavaScript
 const redis = require('redis');
 const dump = require('@atlassian/redis-dump-restore').dump;
+// Use this function to DUMP all values atomically (inside MULTI)
+//const dump = require('@atlassian/redis-dump-restore').dumpMulti;
 
 const clientInstance = redis.createClient('localhost', 6379, { detect_buffers: true });
 const dumpEx = dump(clientInstance, '*');
