@@ -7,7 +7,8 @@ It issues those commands using the [redis](https://www.npmjs.com/package/redis) 
 instance of the client yourself. Make sure to set `return_buffers` and/or `detect_buffers` to `true`
 (see [docs](https://www.npmjs.com/package/redis#overloading)) so that we get
 [Buffer](https://nodejs.org/api/buffer.html) instances from the client.
-This is required because otherwise binary data is corrupted.
+This is required because otherwise binary data is corrupted. Use 1.0.0+ version of the `redis` library - previous
+versions have bugs in `detect_buffers` handling.
 
 ## Dependencies
 
