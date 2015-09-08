@@ -1,6 +1,6 @@
 'use strict';
 
-const dump = require('../lib/dump');
+const dump = require('../index').dump;
 
 describe('dump', function () {
 
