@@ -1,5 +1,5 @@
 {
-  "name": "@atlassian/redis-dump-restore",
+  "name": "redis-dump-restore",
   "version": "0.1.0",
   "description": "Dump and restore Redis contents",
   "main": "index.js",
