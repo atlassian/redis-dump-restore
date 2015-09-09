@@ -8,7 +8,7 @@
     "it": "mocha ./test/*.it.js",
     "lint": "eslint .",
     "test": "npm run lint && npm run spec",
-    "coverage": "istanbul cover mocha -- ./test/*.test.js",
+    "coverage": "istanbul cover _mocha -- ./test/*.test.js",
     "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls"
   },
   "repository": {
