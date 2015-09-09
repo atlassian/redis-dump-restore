@@ -28,7 +28,7 @@ const dumpEx = dump(clientInstance, '*');
 dumpEx
   .on('data', function (key, data, ttl) {
     // Do something with data.
-    // Both key and data are Buffers.
+    // Both key and data are Buffers with binary data.
     // ttl is 0 if key expiration is not set, otherwise it is a positive value in milliseconds.
   })
   .on('error', function (err) {
@@ -37,4 +37,15 @@ dumpEx
   .on('end', function () {
     // We're done!
   });
+```
+
+To restore a dump just use the `redis` client's `restore` command for each saved key. You can do that as a single
+[transaction](http://redis.io/topics/transactions) if needed using [MULTI](http://redis.io/commands/MULTI).
+
+## Install instructions
+
+In your project directory run the following command to add this library as a dependency:
+
+```shell
+npm install redis-dump-restore --save
 ```
