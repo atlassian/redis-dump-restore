@@ -5,6 +5,7 @@
 [![NPM](https://nodei.co/npm-dl/redis-dump-restore.png)](https://nodei.co/npm-dl/redis-dump-restore/)
 
 [![Build Status](https://travis-ci.org/atlassian/redis-dump-restore.svg?branch=master)](https://travis-ci.org/atlassian/redis-dump-restore)
+[![Coverage Status](https://coveralls.io/repos/atlassian/redis-dump-restore/badge.svg?branch=master&service=github)](https://coveralls.io/github/atlassian/redis-dump-restore?branch=master)
 
 This is a library for [Node.js](https://nodejs.org/) / [io.js](https://iojs.org) to dump and restore [Redis](http://redis.io) contents
 using [DUMP](http://redis.io/commands/DUMP) and [RESTORE](http://redis.io/commands/RESTORE) commands.
