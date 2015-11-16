@@ -1,7 +1,38 @@
-language: node_js
-node_js:
-- iojs-v2
-- iojs-v3
-- 4
+env:
+    matrix:
+        - export NODE_VERSION="iojs-v2"
+        - export NODE_VERSION="iojs-v3"
+        - export NODE_VERSION="4"
+        - export NODE_VERSION="5"
+os:
+    - linux
+    - osx
+before_install:
+    - if [ "$TRAVIS_OS_NAME" == 'osx' ]; then
+        brew update;
+        brew install nvm;
+        export NVM_DIR="$HOME/.nvm";
+        source "$(brew --prefix nvm)/nvm.sh" || true;
+      fi
+    - nvm install "$NODE_VERSION"
+install:
+    - if [ "$TRAVIS_OS_NAME" == 'osx' ]; then
+        export NVM_DIR="$HOME/.nvm";
+        source "$(brew --prefix nvm)/nvm.sh" || true;
+      fi
+    - nvm use "$NODE_VERSION"
+    - npm install
+script:
+    - if [ "$TRAVIS_OS_NAME" == 'osx' ]; then
+        export NVM_DIR="$HOME/.nvm";
+        source "$(brew --prefix nvm)/nvm.sh" || true;
+      fi
+    - nvm use "$NODE_VERSION"
+    - npm test
 after_success:
-  - npm run coveralls
+    - if [ "$TRAVIS_OS_NAME" == 'osx' ]; then
+        export NVM_DIR="$HOME/.nvm";
+        source "$(brew --prefix nvm)/nvm.sh" || true;
+      fi
+    - nvm use "$NODE_VERSION"
+    - npm run coveralls
