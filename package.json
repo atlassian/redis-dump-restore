@@ -26,7 +26,7 @@
     "backup"
   ],
   "engines": {
-    "iojs": ">= 2.0.0"
+    "node": ">= 4.0.0"
   },
   "author": "Mikhail Mazurskiy <mikhail.mazursky@gmail.com> (ash2k.com)",
   "license": "Apache-2.0",
