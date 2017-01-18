@@ -1,6 +1,6 @@
 {
   "name": "redis-dump-restore",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Dump and restore Redis contents",
   "main": "index.js",
   "scripts": {
