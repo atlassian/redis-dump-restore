@@ -1,9 +1,9 @@
 env:
     matrix:
-        - export NODE_VERSION="iojs-v2"
-        - export NODE_VERSION="iojs-v3"
         - export NODE_VERSION="4"
         - export NODE_VERSION="5"
+        - export NODE_VERSION="6"
+        - export NODE_VERSION="7"
 os:
     - linux
     - osx
