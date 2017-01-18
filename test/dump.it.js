@@ -4,7 +4,7 @@ const dumpLib = require('../index');
 const redis = require('redis');
 const uuid = require('node-uuid');
 
-for (let method of ['dump', 'dumpMulti']) {
+for (const method of ['dump', 'dumpMulti']) {
   describe(method, function () {
 
     let client;
